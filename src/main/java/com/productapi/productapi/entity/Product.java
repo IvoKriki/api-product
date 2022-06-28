@@ -22,4 +22,8 @@ public class Product {
     @Column
     private LocalDateTime createdAt;
 
+    @PrePersist
+    private void localDateTimeNow(){
+        createdAt = LocalDateTime.now();
+    }
 }
